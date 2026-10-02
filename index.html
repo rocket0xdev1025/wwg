@@ -44,6 +44,18 @@
     :focus-visible { outline: 2px solid #172536; outline-offset: 3px; }
     button { cursor: pointer; }
     .pixel { image-rendering: pixelated; }
+    .mark {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex: none;
+    }
+    .mark img {
+      width: 158%;
+      height: 158%;
+      max-width: none;
+      image-rendering: pixelated;
+    }
     .marquee-track { animation: marquee 36s linear infinite; }
     .marquee:hover .marquee-track { animation-play-state: paused; }
     @keyframes marquee {
@@ -68,12 +80,12 @@
     <img src="bg.jpg" alt="" class="h-full w-full object-cover object-center" />
   </div>
 
-  <div id="toast" role="status" aria-live="polite" aria-atomic="true" class="pointer-events-none fixed bottom-24 left-1/2 z-50 -translate-x-1/2 translate-y-3 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-ice-paper opacity-0 shadow-card transition duration-200 lg:bottom-8"></div>
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true" class="pointer-events-none fixed bottom-24 left-1/2 z-50 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-ice-paper opacity-0 shadow-card transition duration-200 lg:bottom-8" style="transform: translate(-50%, 0.75rem)"></div>
 
   <header class="sticky top-0 z-40 border-b border-ink/10 bg-ice-paper/80 backdrop-blur-md lg:hidden">
     <div class="flex items-center justify-between gap-3 px-4 py-3">
       <a href="#top" class="flex min-w-0 items-center gap-2">
-        <img src="logo.png" alt="World Wide GPT logo" class="pixel h-11 w-11 shrink-0 object-contain" />
+        <span class="mark h-11 w-11"><img src="logo.png" alt="World Wide GPT logo" /></span>
         <span class="min-w-0">
           <span class="block truncate text-sm font-extrabold leading-none">World Wide GPT</span>
           <span class="mt-1 block text-xs font-bold tracking-[0.18em] text-ink-soft">$WWG</span>
@@ -83,7 +95,7 @@
         <a href="https://t.me/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="block h-10 w-10 overflow-hidden rounded-full transition hover:scale-105">
           <img src="tg.png" alt="" class="h-full w-full object-cover" />
         </a>
-        <a href="https://x.com/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-10 w-10 overflow-hidden rounded-xl transition hover:scale-105">
+        <a href="https://x.com/worldwidegptx" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-10 w-10 overflow-hidden rounded-xl transition hover:scale-105">
           <img src="x.png" alt="" class="h-full w-full object-cover" />
         </a>
       </div>
@@ -99,15 +111,15 @@
   <aside class="fixed inset-y-0 left-0 z-30 hidden w-72 overflow-y-auto border-r border-ink/10 bg-ice-paper/80 backdrop-blur-md lg:block">
     <div class="flex min-h-full flex-col px-4 py-5">
       <a href="#top" class="flex items-center gap-3">
-        <img src="logo.png" alt="" class="pixel h-14 w-14 shrink-0 object-contain" />
+        <span class="mark h-16 w-16"><img src="logo.png" alt="" /></span>
         <span>
           <span class="block text-base font-extrabold leading-tight">World Wide GPT</span>
           <span class="mt-1 block text-xs font-bold tracking-[0.18em] text-ink-soft">$WWG</span>
         </span>
       </a>
 
-      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="mt-6 rounded-full bg-ink px-4 py-3 text-center text-sm font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95">Buy Now</a>
-      <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-full border-2 border-ink px-4 py-3 text-center text-sm font-bold transition hover:bg-ink hover:text-ice-paper active:scale-95">Chart</a>
+      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="mt-6 rounded-full bg-ink px-4 py-3 text-center text-sm font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95">Buy Now</a>
+      <a href="https://dexscreener.com/solana/89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-full border-2 border-ink px-4 py-3 text-center text-sm font-bold transition hover:bg-ink hover:text-ice-paper active:scale-95">Chart</a>
 
       <nav class="mt-6 space-y-1 text-sm font-semibold">
         <button id="new-prompt" type="button" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left hover:bg-white/80">
@@ -119,11 +131,11 @@
         <a href="#chart" class="block rounded-xl px-3 py-2 hover:bg-white/80">Chart</a>
         <a href="#ca" class="block rounded-xl px-3 py-2 hover:bg-white/80">Contract address</a>
       </nav>
-
+ 
       <div class="mt-auto pt-8">
         <div class="rounded-2xl border border-ink/10 bg-white/70 p-3">
           <p class="text-[11px] font-bold tracking-[0.16em] text-ink-soft">CONTRACT</p>
-          <p data-ca class="mt-1 break-all font-mono text-sm font-medium">TBA</p>
+          <p data-ca class="mt-1 break-all font-mono text-sm font-medium">89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump</p>
           <button type="button" data-copy class="mt-3 w-full rounded-full bg-ink px-3 py-2 text-sm font-bold text-ice-paper transition hover:bg-ink-soft">
             <span data-copy-label>Copy CA</span>
           </button>
@@ -132,7 +144,7 @@
           <a href="https://t.me/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="block h-11 w-11 overflow-hidden rounded-full transition hover:scale-105">
             <img src="tg.png" alt="" class="h-full w-full object-cover" />
           </a>
-          <a href="https://x.com/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-11 w-11 overflow-hidden rounded-xl transition hover:scale-105">
+          <a href="https://x.com/worldwidegptx" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-11 w-11 overflow-hidden rounded-xl transition hover:scale-105">
             <img src="x.png" alt="" class="h-full w-full object-cover" />
           </a>
         </div>
@@ -142,15 +154,15 @@
   </aside>
 
   <main class="pb-28 lg:pb-0 lg:pl-72">
-    <section id="top" class="mx-auto max-w-3xl scroll-mt-28 px-4 pb-8 pt-8 sm:px-6 lg:pt-12">
+    <section id="top" class="mx-auto max-w-3xl scroll-mt-28 px-4 pb-8 pt-5 sm:px-6 sm:pt-8 lg:pt-12">
       <p class="text-center text-xs font-bold tracking-[0.22em] text-ink-soft">SOLANA MEME MODEL</p>
-      <h1 class="mt-3 text-balance text-center text-5xl font-extrabold tracking-[-0.045em] sm:text-6xl md:text-7xl">World Wide GPT</h1>
-      <p class="mt-4 text-center font-pixel text-[10px] leading-loose">$WWG</p>
+      <h1 class="mt-2 text-balance text-center text-4xl font-extrabold tracking-[-0.045em] sm:mt-3 sm:text-6xl md:text-7xl">World Wide GPT</h1>
+      <p class="mx-auto mt-5 w-fit rounded-full border border-ink/15 bg-white/75 px-4 py-1.5 text-sm font-extrabold tracking-[0.24em]">$WWG</p>
 
-      <div class="mt-8 rounded-[2rem] border border-ink/10 bg-ice-paper/80 p-4 shadow-card backdrop-blur-md sm:p-6">
+      <div class="mt-5 rounded-[2rem] border border-ink/10 bg-ice-paper/80 p-4 shadow-card backdrop-blur-md sm:mt-8 sm:p-6">
         <div class="flex items-center justify-between gap-3">
           <div class="flex min-w-0 items-center gap-3">
-            <img src="logo.png" alt="" class="pixel h-12 w-12 shrink-0 object-contain" />
+            <span class="mark h-12 w-12"><img src="logo.png" alt="" /></span>
             <div class="min-w-0">
               <p class="truncate font-extrabold">World Wide GPT</p>
               <p class="mt-0.5 flex items-center gap-2 text-xs font-semibold text-ink-soft">
@@ -166,7 +178,7 @@
             <a href="https://t.me/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="block h-10 w-10 overflow-hidden rounded-full transition hover:scale-105">
               <img src="tg.png" alt="" class="h-full w-full object-cover" />
             </a>
-            <a href="https://x.com/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-10 w-10 overflow-hidden rounded-xl transition hover:scale-105">
+            <a href="https://x.com/worldwidegptx" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-10 w-10 overflow-hidden rounded-xl transition hover:scale-105">
               <img src="x.png" alt="" class="h-full w-full object-cover" />
             </a>
           </div>
@@ -175,7 +187,7 @@
         <div id="ca" class="mt-4 flex items-center gap-3 rounded-2xl border border-ink/10 bg-ice/80 px-3 py-3 scroll-mt-28">
           <div class="min-w-0 flex-1">
             <p class="text-[11px] font-bold tracking-[0.16em] text-ink-soft">CONTRACT ADDRESS</p>
-            <p data-ca class="mt-1 select-all break-all font-mono text-sm font-semibold">TBA</p>
+            <p data-ca class="mt-1 select-all break-all font-mono text-sm font-semibold">89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump</p>
           </div>
           <button type="button" data-copy class="shrink-0 rounded-full bg-ink px-4 py-2 text-sm font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95">
             <span data-copy-label>Copy</span>
@@ -189,7 +201,7 @@
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <img src="logo.png" alt="" class="pixel mt-0.5 h-9 w-9 shrink-0 object-contain" />
+            <span class="mark mt-0.5 h-9 w-9"><img src="logo.png" alt="" /></span>
             <div class="min-w-0 max-w-[85%]">
               <p class="mb-1 text-xs font-bold text-ink-soft">World Wide GPT</p>
               <div class="rounded-2xl rounded-tl-md border border-ink/10 bg-white/90 px-4 py-3">
@@ -200,8 +212,8 @@
         </div>
 
         <div class="mt-4 grid grid-cols-2 gap-3">
-          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-ink px-4 py-3 text-center text-sm font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95 sm:text-base">Buy Now</a>
-          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-ink px-4 py-3 text-center text-sm font-bold transition hover:bg-ink hover:text-ice-paper active:scale-95 sm:text-base">Chart</a>
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="rounded-full bg-ink px-4 py-3 text-center text-sm font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95 sm:text-base">Buy Now</a>
+          <a href="https://dexscreener.com/solana/89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-ink px-4 py-3 text-center text-sm font-bold transition hover:bg-ink hover:text-ice-paper active:scale-95 sm:text-base">Chart</a>
         </div>
 
         <form id="composer" class="mt-4">
@@ -310,8 +322,8 @@
       </ol>
 
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-ink px-8 py-3 text-center text-base font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95">Buy Now</a>
-        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-ink px-8 py-3 text-center text-base font-bold transition hover:bg-ink hover:text-ice-paper active:scale-95">Chart</a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="rounded-full bg-ink px-8 py-3 text-center text-base font-bold text-ice-paper transition hover:bg-ink-soft active:scale-95">Buy Now</a>
+        <a href="https://dexscreener.com/solana/89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-ink px-8 py-3 text-center text-base font-bold transition hover:bg-ink hover:text-ice-paper active:scale-95">Chart</a>
       </div>
     </section>
 
@@ -322,7 +334,7 @@
           <h2 class="text-4xl font-extrabold tracking-[-0.04em] sm:text-5xl">Chart</h2>
           <p class="mt-3 max-w-xl text-lg leading-relaxed text-ink-soft">Live Dexscreener chart for $WWG on Solana. Same pair as the Chart button.</p>
         </div>
-        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="shrink-0 rounded-full border-2 border-ink px-5 py-2.5 text-center text-sm font-bold transition hover:bg-ink hover:text-ice-paper">Open chart</a>
+        <a href="https://dexscreener.com/solana/89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="shrink-0 rounded-full border-2 border-ink px-5 py-2.5 text-center text-sm font-bold transition hover:bg-ink hover:text-ice-paper">Open chart</a>
       </div>
 
       <div class="mt-8 overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-card">
@@ -333,11 +345,11 @@
             <span class="h-2.5 w-2.5 rounded-full bg-ink" aria-hidden="true"></span>
             <p class="ml-2 truncate text-sm font-bold">$WWG · Solana</p>
           </div>
-          <p class="shrink-0 font-mono text-xs font-medium text-ink-soft">CA <span data-ca>TBA</span></p>
+          <p class="shrink-0 font-mono text-xs font-medium text-ink-soft">CA <span data-ca>89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump</span></p>
         </div>
         <iframe
           title="Dexscreener chart for World Wide GPT"
-          src="https://dexscreener.com/solana/TBA?embed=1&amp;loadChartSettings=0&amp;trades=0&amp;info=0&amp;chartLeftToolbar=0&amp;chartDefaultOnMobile=1&amp;chartTheme=light&amp;theme=light&amp;chartStyle=0&amp;chartType=usd&amp;interval=15"
+          src="https://dexscreener.com/solana/89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump?embed=1&amp;loadChartSettings=0&amp;trades=0&amp;info=0&amp;chartLeftToolbar=0&amp;chartDefaultOnMobile=1&amp;chartTheme=light&amp;theme=light&amp;chartStyle=0&amp;chartType=usd&amp;interval=15"
           class="h-[440px] w-full border-0 bg-white md:h-[560px]"
           loading="lazy"
         ></iframe>
@@ -348,7 +360,7 @@
       <div class="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div class="max-w-xl">
           <div class="flex items-center gap-3">
-            <img src="logo.png" alt="" class="pixel h-12 w-12 object-contain" />
+            <span class="mark h-12 w-12"><img src="logo.png" alt="" /></span>
             <div>
               <p class="text-lg font-extrabold">World Wide GPT</p>
               <p class="text-xs font-bold tracking-[0.18em] text-ink-soft">$WWG · SOLANA</p>
@@ -358,8 +370,8 @@
         </div>
         <div class="flex flex-col gap-3 sm:items-end">
           <div class="flex flex-wrap gap-2">
-            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-ink px-5 py-2.5 text-sm font-bold text-ice-paper transition hover:bg-ink-soft">Buy Now</a>
-            <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-ink px-5 py-2.5 text-sm font-bold transition hover:bg-ink hover:text-ice-paper">Chart</a>
+            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="rounded-full bg-ink px-5 py-2.5 text-sm font-bold text-ice-paper transition hover:bg-ink-soft">Buy Now</a>
+            <a href="https://dexscreener.com/solana/89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-ink px-5 py-2.5 text-sm font-bold transition hover:bg-ink hover:text-ice-paper">Chart</a>
             <button type="button" data-copy class="rounded-full border-2 border-ink px-5 py-2.5 text-sm font-bold transition hover:bg-ink hover:text-ice-paper">
               <span data-copy-label>Copy CA</span>
             </button>
@@ -368,7 +380,7 @@
             <a href="https://t.me/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="block h-11 w-11 overflow-hidden rounded-full transition hover:scale-105">
               <img src="tg.png" alt="" class="h-full w-full object-cover" />
             </a>
-            <a href="https://x.com/worldwidegpt" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-11 w-11 overflow-hidden rounded-xl transition hover:scale-105">
+            <a href="https://x.com/worldwidegptx" target="_blank" rel="noopener noreferrer" aria-label="X" class="block h-11 w-11 overflow-hidden rounded-xl transition hover:scale-105">
               <img src="x.png" alt="" class="h-full w-full object-cover" />
             </a>
           </div>
@@ -378,17 +390,17 @@
     </footer>
   </main>
 
-  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-ice-paper/90 p-3 backdrop-blur-md lg:hidden">
+  <div id="dock" class="fixed inset-x-0 bottom-0 z-40 translate-y-full border-t border-ink/10 bg-ice-paper/90 p-3 backdrop-blur-md transition-transform duration-200 lg:hidden">
     <div class="mx-auto flex max-w-lg items-center gap-2">
       <button type="button" data-copy class="rounded-full border-2 border-ink px-4 py-3 text-sm font-bold" aria-label="Copy contract address">
         <span data-copy-label>Copy CA</span>
       </button>
-      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="flex-1 rounded-full bg-ink py-3 text-center text-sm font-bold text-ice-paper">Buy Now</a>
+      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump" target="_blank" rel="noopener noreferrer" class="flex-1 rounded-full bg-ink py-3 text-center text-sm font-bold text-ice-paper">Buy Now</a>
     </div>
   </div>
 
   <script>
-    const CA = "TBA";
+    const CA = "89PNM5oG8RkTSbnRKySNX9HSXXKtVSBDyF9X2Rf5pump";
     const TAGLINE = "world wide gpt is taking over the timeline, powering global chaos, memes, and AI magic one prompt at a time.";
 
     document.querySelectorAll("[data-ca]").forEach((el) => {
@@ -404,31 +416,42 @@
 
     function toast(message) {
       toastEl.textContent = message;
-      toastEl.classList.remove("opacity-0", "translate-y-3");
-      toastEl.classList.add("opacity-100", "translate-y-0");
+      toastEl.style.opacity = "1";
+      toastEl.style.transform = "translate(-50%, 0)";
       window.clearTimeout(toastTimer);
       toastTimer = window.setTimeout(() => {
-        toastEl.classList.add("opacity-0", "translate-y-3");
-        toastEl.classList.remove("opacity-100", "translate-y-0");
-      }, 1600);
+        toastEl.style.opacity = "0";
+        toastEl.style.transform = "translate(-50%, 0.75rem)";
+      }, 1800);
+    }
+
+    function copyWithSelection(text) {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.top = "0";
+      area.style.left = "0";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.focus();
+      area.select();
+      area.setSelectionRange(0, text.length);
+      const ok = document.execCommand("copy");
+      area.remove();
+      if (!ok) throw new Error("copy");
     }
 
     function copyText(text) {
-      if (navigator.clipboard && window.isSecureContext) {
-        return navigator.clipboard.writeText(text);
+      try {
+        copyWithSelection(text);
+        return Promise.resolve();
+      } catch (err) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+        return Promise.reject(err);
       }
-      return new Promise((resolve, reject) => {
-        const area = document.createElement("textarea");
-        area.value = text;
-        area.setAttribute("readonly", "");
-        area.style.position = "fixed";
-        area.style.left = "-9999px";
-        document.body.appendChild(area);
-        area.select();
-        const ok = document.execCommand("copy");
-        area.remove();
-        ok ? resolve() : reject(new Error("copy"));
-      });
     }
 
     document.querySelectorAll("[data-copy]").forEach((btn) => {
@@ -474,10 +497,12 @@
     function appendBot(text) {
       const row = document.createElement("div");
       row.className = "msg-in flex items-start gap-3";
+      const mark = document.createElement("span");
+      mark.className = "mark mt-0.5 h-9 w-9";
       const img = document.createElement("img");
       img.src = "logo.png";
       img.alt = "";
-      img.className = "pixel mt-0.5 h-9 w-9 shrink-0 object-contain";
+      mark.appendChild(img);
       const body = document.createElement("div");
       body.className = "min-w-0 max-w-[85%]";
       const who = document.createElement("p");
@@ -490,7 +515,7 @@
       p.textContent = text;
       bubble.appendChild(p);
       body.append(who, bubble);
-      row.append(img, body);
+      row.append(mark, body);
       thread.appendChild(row);
       while (thread.children.length > 8) {
         thread.removeChild(thread.children[2]);
@@ -562,6 +587,14 @@
     document.querySelectorAll("[data-suggest]").forEach((btn) => {
       btn.addEventListener("click", () => send(btn.dataset.suggest || ""));
     });
+
+    const dock = document.getElementById("dock");
+    function syncDock() {
+      if (!dock) return;
+      dock.classList.toggle("translate-y-full", window.scrollY < 420);
+    }
+    syncDock();
+    window.addEventListener("scroll", syncDock, { passive: true });
 
     document.getElementById("new-prompt").addEventListener("click", () => {
       document.getElementById("top").scrollIntoView({ behavior: "smooth" });
